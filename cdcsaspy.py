@@ -30,7 +30,7 @@ def cdcanthro(data,
               wt='weight_kg', 
               ht='height_cm', 
               bmi='bmi', 
-              all=False):
+              all=True):
     
         
     original_data = data.copy()
@@ -276,13 +276,14 @@ def cdcanthro(data,
 if __name__ == '__main__':
     data = pd.DataFrame({
             'seq_': [1, 2, 3, 4],
-            'sex': ['girl', 'girl', 'boy', 'boy'],
-            'age_in_months': [108, 110, 110, 110],
+            'sex': ['girl', 'g', 'b', 'boy'],
+            'age_in_months': [108, 120.641, 110, 110],
             'weight_kg': [15, 12, 14, 16],
             'height_cm': [80, 80, 70, 65],
             'bmi': [15, 18, 17, 18]
         })
     
-    res = cdcanthro(data)
+    res = cdcanthro(data)  # By default displays all data, set all = False to change this. 
     print(res)
+        
     # print(cdc__ref__data)
